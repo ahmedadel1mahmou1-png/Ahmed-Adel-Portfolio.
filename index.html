@@ -8,6 +8,7 @@
   <meta property="og:title" content="Ahmed Adel Mahmoud | eCommerce Content & Production Head" />
   <meta property="og:description" content="Content operations, merchandising, catalog governance, and product photography production for eCommerce." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/linkedin-profile.jpg" />
   <title>Ahmed Adel Mahmoud | eCommerce Content & Production Head</title>
   <style>
     :root{
@@ -93,9 +94,19 @@
     }
     .profile-card:before{content:"";position:absolute;inset:-80px -80px auto auto;width:200px;height:200px;border-radius:50%;background:rgba(40,212,154,.18);filter:blur(8px)}
     .avatar{
-      width:108px;height:108px;border-radius:30px;background:linear-gradient(135deg,var(--brand),var(--brand-2));
-      display:grid;place-items:center;color:#06101d;font-size:40px;font-weight:950;margin-bottom:22px;position:relative
+      width:128px;height:128px;border-radius:50%;
+      display:grid;place-items:center;color:#06101d;font-size:40px;font-weight:950;margin-bottom:22px;position:relative;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      padding:4px;box-shadow:0 18px 40px rgba(15,35,70,.14);overflow:hidden
     }
+    .avatar img{
+      width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;background:var(--panel)
+    }
+    .avatar span{
+      width:100%;height:100%;border-radius:50%;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#06101d
+    }
+    .avatar img + span{display:none}
     .card-title{font-size:24px;font-weight:900;margin:0 0 6px}
     .card-sub{color:var(--muted);margin:0 0 22px}
     .meta{display:grid;gap:12px;margin-top:18px}
@@ -185,7 +196,11 @@
           </div>
         </div>
         <aside class="profile-card" aria-label="Profile summary">
-          <div class="avatar">AA</div>
+                    <!-- Replace assets/linkedin-profile.jpg with the exported LinkedIn profile photo. -->
+          <div class="avatar">
+            <img src="assets/linkedin-profile.jpg" alt="Ahmed Adel Mahmoud profile photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <span>AA</span>
+          </div>
           <h2 class="card-title">Profile Snapshot</h2>
           <p class="card-sub">Content & Production Head at Raneen.com, based in New Cairo, Egypt.</p>
           <div class="meta">
