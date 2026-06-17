@@ -11,28 +11,28 @@
   <title>Ahmed Adel Mahmoud | eCommerce Content & Production Head</title>
   <style>
     :root{
-      --bg:#08111f;
-      --panel:#0f1b2d;
-      --panel-2:#111f35;
-      --text:#eaf0fb;
-      --muted:#a8b4ca;
-      --brand:#28d49a;
-      --brand-2:#63a9ff;
-      --line:rgba(255,255,255,.12);
-      --shadow:0 18px 60px rgba(0,0,0,.32);
+      --bg:#f8fbff;
+      --panel:#ffffff;
+      --panel-2:#eef6ff;
+      --text:#142033;
+      --muted:#64748b;
+      --brand:#00a884;
+      --brand-2:#3b82f6;
+      --line:rgba(20,32,51,.11);
+      --shadow:0 18px 50px rgba(15,35,70,.09);
       --radius:24px;
       --max:1140px;
     }
-    [data-theme="light"]{
-      --bg:#f6f9ff;
-      --panel:#ffffff;
-      --panel-2:#edf5ff;
-      --text:#122033;
-      --muted:#5d6b7d;
-      --brand:#039b72;
-      --brand-2:#246bfe;
-      --line:rgba(18,32,51,.12);
-      --shadow:0 18px 50px rgba(17,32,64,.10);
+    [data-theme="dark"]{
+      --bg:#111827;
+      --panel:#172236;
+      --panel-2:#1b2a43;
+      --text:#edf4ff;
+      --muted:#b8c4d6;
+      --brand:#49e3b3;
+      --brand-2:#83bfff;
+      --line:rgba(255,255,255,.13);
+      --shadow:0 18px 60px rgba(0,0,0,.28);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -152,7 +152,7 @@
     }
   </style>
 </head>
-<body data-theme="dark">
+<body data-theme="light">
   <header class="topbar">
     <nav class="container nav" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="Ahmed Adel Mahmoud homepage"><span class="logo">AA</span><span>Ahmed Adel</span></a>
@@ -283,7 +283,7 @@
   <script>
     const body = document.body;
     const themeToggle = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'light';
     body.setAttribute('data-theme', savedTheme);
     themeToggle.textContent = savedTheme === 'dark' ? 'Light mode' : 'Dark mode';
 
