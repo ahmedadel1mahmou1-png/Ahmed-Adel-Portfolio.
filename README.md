@@ -1,7 +1,448 @@
-# Ahmed Adel Portfolio
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ahmed Adel Mahmoud - eCommerce Content & Production Head specializing in content operations, onsite merchandising, Magento catalog governance, and product photography production." />
+  <meta name="author" content="Ahmed Adel Mahmoud" />
+  <meta property="og:title" content="Ahmed Adel Mahmoud | eCommerce Content & Production Head" />
+  <meta property="og:description" content="Content operations, merchandising, catalog governance, and product photography production for eCommerce." />
+  <meta property="og:type" content="website" />
+  <title>Ahmed Adel Mahmoud | eCommerce Content & Production Head</title>
 
-Upload all files/folders to GitHub:
-- index.html
-- assets/
+  <style>
+    :root{
+      --bg:#f8fbff;
+      --panel:#ffffff;
+      --panel-2:#eef6ff;
+      --text:#142033;
+      --muted:#64748b;
+      --brand:#00a884;
+      --brand-2:#3b82f6;
+      --line:rgba(20,32,51,.11);
+      --shadow:0 18px 50px rgba(15,35,70,.09);
+      --radius:24px;
+      --max:1140px;
+    }
+    [data-theme="dark"]{
+      --bg:#111827;
+      --panel:#172236;
+      --panel-2:#1b2a43;
+      --text:#edf4ff;
+      --muted:#b8c4d6;
+      --brand:#49e3b3;
+      --brand-2:#83bfff;
+      --line:rgba(255,255,255,.13);
+      --shadow:0 18px 60px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(40,212,154,.22), transparent 34rem),
+        radial-gradient(circle at 90% 6%, rgba(99,169,255,.18), transparent 32rem),
+        var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 40px)); margin-inline:auto}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:blur(18px);
+      background:color-mix(in srgb, var(--bg) 82%, transparent);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{height:72px; display:flex; align-items:center; justify-content:space-between; gap:18px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
+    .logo{
+      width:42px;height:42px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      color:#06101d;font-weight:900;box-shadow:0 10px 28px rgba(40,212,154,.25)
+    }
+    .navlinks{display:flex;gap:6px;align-items:center}
+    .navlinks a,.theme-btn{
+      border:1px solid transparent;background:transparent;color:var(--muted);
+      padding:10px 12px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer
+    }
+    .navlinks a:hover,.theme-btn:hover{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.04)}
+    .hero{padding:84px 0 46px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+    .eyebrow{
+      display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:999px;
+      padding:8px 12px;color:var(--muted);background:rgba(255,255,255,.04);font-weight:700;font-size:13px
+    }
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 6px rgba(40,212,154,.12)}
+    h1{font-size:clamp(42px, 7vw, 78px);line-height:.96;margin:24px 0 18px;letter-spacing:-2.6px}
+    .accent{background:linear-gradient(120deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(18px,2vw,22px);color:var(--muted);max-width:760px;margin:0 0 28px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:48px;padding:12px 18px;border-radius:999px;border:1px solid var(--line);
+      font-weight:850;transition:transform .2s ease, background .2s ease, border .2s ease
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#07111d;border:0}
+    .btn.ghost{background:rgba(255,255,255,.04);color:var(--text)}
+    .profile-card{
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.035));
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;position:relative;overflow:hidden
+    }
+    .profile-card:before{content:"";position:absolute;inset:-80px -80px auto auto;width:200px;height:200px;border-radius:50%;background:rgba(40,212,154,.18);filter:blur(8px)}
+    .avatar{
+      width:128px;height:128px;border-radius:50%;
+      display:grid;place-items:center;color:#06101d;font-size:42px;font-weight:950;margin-bottom:22px;position:relative;
+      background:linear-gradient(135deg,var(--brand),var(--brand-2));
+      box-shadow:0 18px 40px rgba(15,35,70,.14);overflow:hidden
+    }
+    .card-title{font-size:24px;font-weight:900;margin:0 0 6px}
+    .card-sub{color:var(--muted);margin:0 0 22px}
+    .meta{display:grid;gap:12px;margin-top:18px}
+    .meta-row{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);padding-top:12px;color:var(--muted)}
+    .meta-row strong{color:var(--text);min-width:86px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+    .stat{padding:18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.04)}
+    .stat b{display:block;font-size:28px;line-height:1;color:var(--text)}
+    .stat span{font-size:13px;color:var(--muted);font-weight:700}
+    section{padding:58px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
+    h2{font-size:clamp(28px,4vw,42px);line-height:1.08;margin:0;letter-spacing:-1.3px}
+    .section-note{color:var(--muted);max-width:650px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:color-mix(in srgb, var(--panel) 92%, transparent);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 10px;font-size:19px}
+    .card p{margin:0;color:var(--muted)}
+    .tag-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .tag{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--muted);padding:7px 11px;border-radius:999px;font-weight:750;font-size:13px}
+    .timeline{position:relative;display:grid;gap:16px}
+    .timeline:before{content:"";position:absolute;left:18px;top:0;bottom:0;width:2px;background:var(--line)}
+    .item{position:relative;padding-left:52px}
+    .item:before{content:"";position:absolute;left:9px;top:16px;width:20px;height:20px;border-radius:50%;background:var(--brand);border:6px solid var(--bg)}
+    .item-box{border:1px solid var(--line);border-radius:20px;background:var(--panel);padding:18px 20px}
+    .item-box h3{margin:0 0 4px;font-size:20px}
+    .item-box .date{color:var(--brand);font-weight:850;font-size:14px}
+    .item-box p{margin:10px 0 0;color:var(--muted)}
+    .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:start}
+    .quote{font-size:24px;line-height:1.35;font-weight:850;letter-spacing:-.6px;margin:0}
+    .achievement-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:color-mix(in srgb, var(--panel) 94%, transparent);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      margin-top:22px;
+    }
+    .achievement-header{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
+      padding:28px;
+      align-items:start;
+    }
+    .achievement-kicker{
+      display:inline-block;
+      color:var(--brand);
+      font-weight:900;
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+    .achievement-header h3,
+    .achievement-copy h3{font-size:26px;margin:0 0 8px;line-height:1.1}
+    .achievement-header p,
+    .achievement-copy p{margin:0;color:var(--muted)}
+    .achievement-points{margin:0;padding-left:18px;color:var(--muted)}
+    .achievement-points li{margin-bottom:8px}
+    .achievement-copy{padding:28px 28px 8px}
+    .achievement-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 28px 28px}
+    .achievement-shot{margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff}
+    .achievement-shot.main,
+    .achievement-shot.full{grid-column:1/-1}
+    .achievement-shot img{display:block;width:100%;height:auto}
+    .achievement-shot figcaption{padding:10px 14px;color:var(--muted);font-size:13px;font-weight:800;border-top:1px solid var(--line)}
+    .contact-panel{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:linear-gradient(135deg,rgba(40,212,154,.14),rgba(99,169,255,.13));box-shadow:var(--shadow)}
+    footer{padding:34px 0 44px;color:var(--muted);border-top:1px solid var(--line)}
+    .footer-row{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+    .tiny{font-size:13px;color:var(--muted)}
+    @media (max-width:900px){
+      .hero-grid,.split,.achievement-header{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .stats{grid-template-columns:1fr}
+      .section-head{align-items:start;flex-direction:column}
+      .achievement-gallery{grid-template-columns:1fr;padding:0 22px 22px}
+      .achievement-header,.achievement-copy{padding:22px}
+    }
+    @media (max-width:680px){
+      .container{width:min(100% - 28px, var(--max))}
+      .nav{height:auto;padding:14px 0;align-items:start}
+      .navlinks{display:none}
+      .hero{padding-top:52px}
+      h1{letter-spacing:-1.5px}
+      .grid{grid-template-columns:1fr}
+      .actions .btn{width:100%}
+      .profile-card{padding:22px}
+    }
+    @media print{
+      .topbar,.actions,.theme-btn{display:none!important}
+      body{background:#fff;color:#111}
+      .card,.profile-card,.item-box,.contact-panel,.achievement-card{box-shadow:none;background:#fff}
+    }
+  </style>
+</head>
 
-Then enable GitHub Pages from Settings > Pages > Deploy from branch.
+<body data-theme="light">
+  <header class="topbar">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Ahmed Adel Mahmoud homepage"><span class="logo">AA</span><span>Ahmed Adel</span></a>
+      <div class="navlinks">
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-btn" type="button" id="themeToggle">Dark mode</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> eCommerce Content Operations • Merchandising • Production</span>
+          <h1>Ahmed Adel Mahmoud<br><span class="accent">Content & Production Head</span></h1>
+          <p class="lead">I own the full product go-live cycle for eCommerce - from category tree, attribute sets, variation logic, and content standards to shooting production, merchandising execution, ranking rules, offers, and CMS / brand page layouts.</p>
+          <div class="actions">
+            <a class="btn primary" href="assets/Ahmed-Adel-Mahmoud-Public-CV.pdf" download>Download public CV</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/ahmed-adel-8477b7a1/" target="_blank" rel="noopener">View LinkedIn</a>
+            <a class="btn ghost" href="mailto:ahmed.adel1mahmoud1@gmail.com">Email me</a>
+          </div>
+          <div class="stats" aria-label="Professional highlights">
+            <div class="stat"><b>12+</b><span>Years in content / eCommerce</span></div>
+            <div class="stat"><b>3</b><span>Core areas: Content, Merchandising, Production</span></div>
+            <div class="stat"><b>Magento</b><span>Catalog operations & bulk workflows</span></div>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="Profile summary">
+          <div class="avatar">
+            <img src="assets/profile-photo.jpg" alt="Ahmed Adel Mahmoud profile photo" />
+            <span>AA</span>
+          </div>
+          <h2 class="card-title">Profile Snapshot</h2>
+          <p class="card-sub">Content & Production Head at Raneen.com, based in New Cairo, Egypt.</p>
+          <div class="meta">
+            <div class="meta-row"><strong>Focus</strong><span>End-to-end product readiness: category tree, attributes, content standards, shooting production, merchandising, offers, and CMS / brand page layouts.</span></div>
+            <div class="meta-row"><strong>Email</strong><a href="mailto:ahmed.adel1mahmoud1@gmail.com">ahmed.adel1mahmoud1@gmail.com</a></div>
+            <div class="meta-row"><strong>Phone</strong><a href="tel:+201225622230">+20 122 562 2230</a></div>
+            <div class="meta-row"><strong>Location</strong><span>New Cairo, Egypt</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="section-head">
+          <h2>What I do</h2>
+          <p class="section-note">A practical mix of catalog architecture, operational leadership, content standards, shooting production, and merchandising execution.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>Content Operations at Scale</h3><p>Lead product data intake, validation, enrichment, upload, localization, and creation based on standards I built for consistent PDP quality.</p></article>
+          <article class="card"><h3>Magento Catalog Governance</h3><p>Own titles, descriptions, attributes, variants, SKU mapping, categories, templates, and bulk upload validations.</p></article>
+          <article class="card"><h3>Category Tree & Attribute Architecture</h3><p>Build category trees, attribute sets, and attribute variation logic so every product has the right structure before going live.</p></article>
+          <article class="card"><h3>End-to-End Product Go-Live Ownership</h3><p>No product becomes available for sale without passing through my team workflow: production shooting, content creation, and merchandising readiness.</p></article>
+          <article class="card"><h3>Merchandising & Commercial Readiness</h3><p>Manage ranking, offer and rule application, product visibility, campaign placement, and visual page layout direction for brand and CMS pages.</p></article>
+          <article class="card"><h3>Production for Shooting</h3><p>Run the product shooting pipeline: shot lists, production planning, studio coordination, editing review, and final imagery readiness.</p></article>
+          <article class="card"><h3>Team Leadership & KPIs</h3><p>Set SLAs, manage throughput and backlog, coach team members, and improve delivery quality through checklists and SOPs.</p></article>
+          <article class="card"><h3>Catalog QA & Data Frameworks</h3><p>Run audits, de-duplicate content, standardize attributes, and maintain Arabic/English consistency across categories.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container split">
+        <div>
+          <h2>Experience</h2>
+          <p class="section-note">A career path focused on eCommerce content, catalog operations, team leadership, and customer-facing digital quality.</p>
+        </div>
+        <div class="timeline">
+          <div class="item"><div class="item-box"><span class="date">Oct 2025 - Present</span><h3>Content & Production Head - Raneen.com</h3><p>Leading the full product go-live workflow across category architecture, attribute sets, content standards, shooting production, merchandising execution, ranking, offers, and CMS / brand page layouts.</p></div></div>
+          <div class="item"><div class="item-box"><span class="date">Jul 2024 - Sep 2025</span><h3>Content Manager - Raneen.com</h3><p>Managed product creation workflows, QA standards, team delivery, and cross-functional catalog improvements.</p></div></div>
+          <div class="item"><div class="item-box"><span class="date">Apr 2020 - Jun 2024</span><h3>Content Supervisor - Raneen.com</h3><p>Supervised content production, product listing accuracy, category placement, and content quality control.</p></div></div>
+          <div class="item"><div class="item-box"><span class="date">Sep 2019 - Mar 2020</span><h3>Content Team Lead - Gatjed.com</h3><p>Led content team execution and supported product listing workflows.</p></div></div>
+          <div class="item"><div class="item-box"><span class="date">Apr 2014 - May 2019</span><h3>Senior Content Specialist - Souq.com / Amazon</h3><p>Built deep marketplace content experience across product data, listing quality, and catalog standards.</p></div></div>
+          <div class="item"><div class="item-box"><span class="date">2010 - 2014</span><h3>Customer Support & Financial Consulting</h3><p>Earlier roles at Etisal International and MetLife ALICO strengthened communication, service quality, and stakeholder handling.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills & Background</h2>
+          <p class="section-note">Core capabilities that support scalable catalog quality and fast campaign readiness.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Core Skills</h3>
+            <div class="tag-list">
+              <span class="tag">E-commerce Content Management</span>
+              <span class="tag">Onsite Merchandising</span>
+              <span class="tag">Product Photography Coordination</span>
+              <span class="tag">Team Leadership</span>
+              <span class="tag">KPI Management</span>
+              <span class="tag">Catalog Governance</span>
+              <span class="tag">Category Tree Building</span>
+              <span class="tag">Attribute Set Architecture</span>
+              <span class="tag">Attribute Variation Logic</span>
+              <span class="tag">Product Creation Standards</span>
+              <span class="tag">Product Go-Live Workflow</span>
+              <span class="tag">Production for Shooting</span>
+              <span class="tag">Ranking & Visibility Rules</span>
+              <span class="tag">Offer Rule Application</span>
+              <span class="tag">Brand & CMS Page Layouts</span>
+              <span class="tag">Bulk Uploads</span>
+              <span class="tag">Templates</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Education</h3>
+            <p>6th October University, Egypt - High Institute of Business Administration (B.Sc.), 2006 - 2010.</p>
+          </article>
+          <article class="card">
+            <h3>Training</h3>
+            <p>Basics & Lighting of Product Photography, CCNA, and Microsoft ICDL.</p>
+          </article>
+          <article class="card">
+            <h3>Product Readiness Workflow</h3>
+            <p>Production prepares the product for shooting, Content creates listings based on my standards, and Merchandising completes ranking, rules, offers, and page visualization.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-head">
+          <h2>Selected Achievements</h2>
+          <p class="section-note">Campaign and merchandising highlights that reflect high-impact eCommerce execution.</p>
+        </div>
+
+        <article class="achievement-card">
+          <div class="achievement-header">
+            <div>
+              <span class="achievement-kicker">Raneen Campaign</span>
+              <h3>White Friday 2026 Event 11-11</h3>
+              <p>Promotional assets prepared for White Friday 11-11, focused on strong offer visibility, app-only coupon communication, cash back messaging, and consistent campaign presence across homepage and billboard placements.</p>
+            </div>
+            <ul class="achievement-points" aria-label="Achievement highlights">
+              <li>Homepage hero billboard and supporting sub-billboard visuals.</li>
+              <li>Clear promo messaging for APP11 and WF500 discount codes.</li>
+              <li>Cash Back communication added to support seasonal offer messaging.</li>
+            </ul>
+          </div>
+
+          <div class="achievement-gallery" aria-label="White Friday 2026 campaign assets">
+            <figure class="achievement-shot main">
+              <img src="assets/white-friday-main.png" alt="White Friday 2026 main billboard campaign asset" loading="lazy" />
+              <figcaption>Main Billboard</figcaption>
+            </figure>
+            <figure class="achievement-shot">
+              <img src="assets/white-friday-sub.png" alt="White Friday 2026 sub billboard campaign asset" loading="lazy" />
+              <figcaption>Sub Billboard</figcaption>
+            </figure>
+            <figure class="achievement-shot">
+              <img src="assets/white-friday-cashback.png" alt="White Friday 2026 cash back campaign asset" loading="lazy" />
+              <figcaption>Cash Back Banner</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="achievement-card">
+          <div class="achievement-copy">
+            <h3>Mother's Day Campaign</h3>
+            <p>Hero campaign visual prepared for Mother's Day promotions, designed to highlight seasonal offers with strong product presentation and festive promotional messaging.</p>
+          </div>
+          <div class="achievement-gallery" aria-label="Mother's Day campaign asset">
+            <figure class="achievement-shot full">
+              <img src="assets/mothers-day.png" alt="Mother's Day campaign hero banner" loading="lazy" />
+              <figcaption>Hero Banner</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="achievement-card">
+          <div class="achievement-copy">
+            <h3>Ramadan Campaign</h3>
+            <p>Seasonal Ramadan campaign visual created to showcase home essentials and festive product bundles, with a warm lifestyle presentation designed for seasonal merchandising and strong promotional appeal.</p>
+          </div>
+          <div class="achievement-gallery" aria-label="Ramadan campaign asset">
+            <figure class="achievement-shot full">
+              <img src="assets/ramadan-campaign.png" alt="Ramadan campaign hero banner" loading="lazy" />
+              <figcaption>Hero Banner</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-panel">
+        <div class="section-head">
+          <div>
+            <h2>Let's connect</h2>
+            <p class="section-note">For eCommerce content operations, merchandising, catalog governance, or product photography production discussions.</p>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="mailto:ahmed.adel1mahmoud1@gmail.com">Send Email</a>
+            <button class="btn ghost" type="button" id="copyEmail">Copy Email</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Ahmed Adel Mahmoud. All rights reserved.</span>
+      <span class="tiny">Built as a static GitHub Pages profile.</span>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? 'Light mode' : 'Dark mode';
+
+    themeToggle.addEventListener('click', () => {
+      const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeToggle.textContent = next === 'dark' ? 'Light mode' : 'Dark mode';
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('copyEmail').addEventListener('click', async () => {
+      const email = 'ahmed.adel1mahmoud1@gmail.com';
+      try {
+        await navigator.clipboard.writeText(email);
+        const btn = document.getElementById('copyEmail');
+        const old = btn.textContent;
+        btn.textContent = 'Email copied';
+        setTimeout(() => btn.textContent = old, 1600);
+      } catch(e) {
+        window.location.href = 'mailto:' + email;
+      }
+    });
+  </script>
+</body>
+</html>
